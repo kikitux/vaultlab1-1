@@ -2,6 +2,7 @@ Vagrant.configure("2") do |config|
   config.vm.box = "alvaro/xenial64"
   config.vm.provision :shell, :path => "scripts/install_consul.sh"
   config.vm.provision :shell, :path => "scripts/install_vault.sh"
+  config.vm.provision :shell, :inline => "cd /vagrant ; ./app.sh"
 
   config.vm.define "leader01" do |l1|
       l1.vm.hostname = "leader01"
