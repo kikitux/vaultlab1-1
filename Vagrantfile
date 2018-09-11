@@ -7,8 +7,8 @@ Vagrant.configure("2") do |config|
   config.vm.define "leader01" do |l1|
       l1.vm.hostname = "leader01"
       l1.vm.network "private_network", ip: "192.168.2.10"
-      l1.vm.network "forwarded_port", guest: 8500, host: 8500
-      l1.vm.network "forwarded_port", guest: 8200, host: 8200
+      l1.vm.network "forwarded_port", guest: 8500, host: 1234
+      l1.vm.network "forwarded_port", guest: 8200, host: 1235
   end
 
 end
