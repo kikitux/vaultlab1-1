@@ -8,5 +8,6 @@ vault {
     }
 secret {
   no_prefix = true
+  
  format = "secret_{{ key }}"
 }
