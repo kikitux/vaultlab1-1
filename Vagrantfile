@@ -17,7 +17,6 @@ Vagrant.configure(2) do |config|
       l1.vm.network "forwarded_port", guest: 8200, host: 8200
       l1.vm.provision :shell, :path => "scripts/install_vault.sh"
       l1.vm.provision :shell, :path => "scripts/install_mysql.sh"
-      l1.vm.provision :shell, :path => "app.py"
       l1.vm.provision :shell, :inline => "cd /vagrant ; scripts/bash_vault.sh", run: "always"
   end
  
