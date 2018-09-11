@@ -9,8 +9,7 @@ Vagrant.configure(2) do |config|
     web.vm.hostname = "consul"
     web.vm.network "private_network", ip: "192.168.2.11"
   end
-
-
+ 
   config.vm.define "leader01" do |l1|
       l1.vm.hostname = "leader01"
       l1.vm.network "private_network", ip: "192.168.2.10"
@@ -20,15 +19,6 @@ Vagrant.configure(2) do |config|
       l1.vm.provision :shell, :path => "scripts/install_mysql.sh"
       l1.vm.provision :shell, :path => "app.py"
       l1.vm.provision :shell, :inline => "cd /vagrant ; scripts/bash_vault.sh", run: "always"
-      
   end
-
-  
-
-
-
+ 
 end
-
-
-
-
